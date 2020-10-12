@@ -2,7 +2,7 @@
 % Please edit documentation in R/bruteknapsack.R
 \name{brute_force_knapsack}
 \alias{brute_force_knapsack}
-\title{This is a description of brute_force_knapsack function}
+\title{Brute force method for solving the knapsack problem}
 \usage{
 brute_force_knapsack(x, W)
 }
@@ -15,7 +15,7 @@ brute_force_knapsack(x, W)
 a list contains the biggest value and the items
 }
 \description{
-This function creates a brute forced algorithm to solve the knapsack problem.
+This function uses a brute force algorithm to solve the knapsack problem.
 }
 \examples{
 set.seed(42)
