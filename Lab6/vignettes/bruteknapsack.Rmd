@@ -1,10 +1,10 @@
 ---
-title: "Lab6"
-author: "Chao Fu & Michael Bailey"
+title: "bruteknapsack"
+author: "Chao Fu & Michael Bailey" 
 data: "r Sys.Date()"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Lab6}
+  %\VignetteIndexEntry{bruteknapsack}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r }
+```{r setup}
 library(bruteknapsack)
 ```
 # Description
