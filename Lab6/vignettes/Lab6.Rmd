@@ -1,0 +1,71 @@
+---
+title: "Lab6"
+author: "Chao Fu & Michael Bailey"
+data: "r Sys.Date()"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Lab6}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r }
+library(bruteknapsack)
+```
+# Description
+There are three functions to solve the knapsack problem, each function implements
+a algorithm.
+
+# Functions
+
+## brute_force_knapsack()
+1. The function implements the algorithm with complexity O(2^n). 
+1. The return is an list with the biggest value and the items.
+
+## dynamic_knapsack()
+1. The function implements the dynamic programming algorithm. 
+1. The return is an list with the biggest value and the items.
+
+## greedy_knapsack()
+1. The function implements the greedy algorithm. 
+1. The return is an list with the biggest value and the items.
+
+# Usage
+
+## Install
+
+```{r, eval=FALSE}
+devtools::install_github("chafu696/Lab6")
+
+```
+
+## Example
+
+```{r, eval=FALSE}
+set.seed(42)
+n <- 2000
+knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE),
+v = runif(n = n, 0 , 10000))
+bfk <- brute_force_knapsack(x = knapsack_objects[1:8, ], W = 3500)
+```
+```{r, eval=FALSE}
+set.seed(42)
+n <- 2000
+knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE),
+v = runif(n = n, 0 , 10000))
+bfk <- dynamic_knapsack(x = knapsack_objects[1:8, ], W = 3500)
+```
+```{r, eval=FALSE}
+set.seed(42)
+n <- 2000
+knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE),
+v = runif(n = n, 0 , 10000))
+bfk <- greedy_knapsack(x = knapsack_objects[1:800, ], W = 3500)
+```
