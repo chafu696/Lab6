@@ -31,7 +31,6 @@ greedy_knapsack <- function(x, W){
   wVal <- x[, 2] / x[, 1]
   x1 <- x[order(wVal, decreasing = TRUE), ]
   val <- 0
-<<<<<<< HEAD
   elements <- 0
   for (i in 1:nrow(x)){
     if (x1[i, 1] > W ){
@@ -40,21 +39,9 @@ greedy_knapsack <- function(x, W){
       val <- val + x1[i, 2]
       W <- W - x1[i, 1]
       elements[i] <- rownames(x1)[i]
-=======
-  index <- 0
-  j <- 1
-  for (i in n1){
-    if (x1[i, 1] > W ){
-      break
-    }else{
-    val <- val + x1[i, 2]
-    W <- W - x1[i, 1]
-    index[j] <- i
-    j <- j + 1
->>>>>>> 5f62722ffb11dfb4868d2d65067e9f93525e72ff
-    }
-  }
-  return(list(value = round(val), elements = elements))
+    }}
+
+  return(list(value = round(val), elements = as.numeric(elements)))
 }
 
 
