@@ -17,14 +17,14 @@
 #'n <- 2000
 #'knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE),
 #'v = runif(n = n, 0 , 10000))
-#'l <- brute_force_knapsack(x = knapsack_objects[1:8, ], W = 3500)
+#'bfk <- brute_force_knapsack(x = knapsack_objects[1:8, ], W = 3500)
 #'
 #'@export brute_force_knapsack
 
 
 # system.time(brute_force_knapsack(knapsack_objects[1:8, ], W = 2000))
 brute_force_knapsack <- function(x, W){
-  if(! is.data.frame(x) || ncol(x) != 2 || ! is.numeric(x[, 1]) || ! is.numeric(x[, 2]) || ! all(x[, 1] > 0) || ! all(x[, 2] > 0)){
+  if(! is.data.frame(x) || ncol(x) != 2 || ! is.numeric(x[, 1]) || ! is.numeric(x[, 2]) || ! all(x[, 1] > 0) || ! all(x[, 2] > 0) || W <= 0 ){
     stop("Check your input please!")
   }
   n1 <- nrow(x)
@@ -39,7 +39,7 @@ brute_force_knapsack <- function(x, W){
   index1 <- index[t2]
   index1 <- gsub("[,]", "", index1)
   index2 <- substring(index1, 3, nchar(index1) - 1)
-
-  my_list <- list(value = round(value2), elements = index2)
-  print(my_list, quote = FALSE)
+  index2 <- unlist(strsplit(index2, " "))
+  my_list <- list(value = round(value2), elements = as.numeric(index2))
+  return(my_list)
 }

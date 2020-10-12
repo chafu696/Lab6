@@ -25,14 +25,13 @@
 # knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE), v = runif(n = n, 0 , 10000))
 #system.time(greedy_knapsack(knapsack_objects[1:800, ], W = 3500))
 greedy_knapsack <- function(x, W){
-  if(! is.data.frame(x) || ncol(x) != 2 || ! is.numeric(x[, 1]) || ! is.numeric(x[, 2]) || ! all(x[, 1] > 0) || ! all(x[, 2] > 0)){
+  if(! is.data.frame(x) || ncol(x) != 2 || ! is.numeric(x[, 1]) || ! is.numeric(x[, 2]) || ! all(x[, 1] > 0) || ! all(x[, 2] > 0) || W <= 0){
     stop("Check your input please!")
   }
   x$rate <- x[, 2] / x[, 1]
   x1 <- x[order(x$rate, decreasing = TRUE), ]
   n1 <- seq(1, nrow(x), by = 1)
   val <- 0
-  wei <- 0
   index <- 0
   j <- 1
   for (i in n1){
@@ -41,7 +40,6 @@ greedy_knapsack <- function(x, W){
     }else{
     val <- val + x1[i, 2]
     W <- W - x1[i, 1]
-    wei <- wei + x1[i, 1]
     index[j] <- i
     j <- j + 1
     }

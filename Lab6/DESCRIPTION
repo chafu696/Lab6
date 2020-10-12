@@ -1,4 +1,4 @@
-Package: bruteknapsack
+Package: Bruteknapsack
 Type: Package
 Title: knapsack algorithm
 Version: 0.1.0
@@ -11,3 +11,8 @@ Depends: R(>= 4.0.0)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
