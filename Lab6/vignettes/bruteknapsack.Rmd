@@ -29,7 +29,7 @@ a algorithm.
 1. The function implements the algorithm with complexity O(2^n). 
 1. The return is an list with the biggest value and the items.
 
-## dynamic_knapsack()
+## knapsack_dynamic()
 1. The function implements the dynamic programming algorithm. 
 1. The return is an list with the biggest value and the items.
 
@@ -73,7 +73,7 @@ set.seed(42)
 n <- 2000
 knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE),
 v = runif(n = n, 0 , 10000))
-bfk <- dynamic_knapsack(x = knapsack_objects[1:8, ], W = 3500)
+bfk <- knapsack_dynamic(x = knapsack_objects[1:8, ], W = 3500)
 ```
 ```{r, eval=FALSE}
 set.seed(42)

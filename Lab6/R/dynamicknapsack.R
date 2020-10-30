@@ -1,6 +1,6 @@
-#'This is a description of dynamic_knapsack function
+#'This is a description of knapsack_dynamic function
 #'
-#'@name dynamic_knapsack
+#'@name knapsack_dynamic
 #'
 #'@description This function creates a dynamic programming to solve the knapsack problem.
 #'
@@ -15,16 +15,16 @@
 #'n <- 2000
 #'knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE),
 #' v = runif(n = n, 0 , 10000))
-#'l <- dynamic_knapsack(x = knapsack_objects[1:8, ], W = 3500)
+#'l <- knapsack_dynamic(x = knapsack_objects[1:8, ], W = 3500)
 #'
-#'@export dynamic_knapsack
+#'@export knapsack_dynamic
 
 # set.seed(42)
 # n <- 2000
 # knapsack_objects <- data.frame(w = sample(1:4000, size = n , replace = TRUE),
 #v = runif(n = n, 0 , 10000))
-# system.time(dynamic_knapsack(knapsack_objects[1:8, ], W = 3500))
-dynamic_knapsack <- function(x, W){
+# system.time(knapsack_dynamic(knapsack_objects[1:8, ], W = 3500))
+knapsack_dynamic <- function(x, W){
   if(! is.data.frame(x) || ncol(x) != 2 || ! is.numeric(x[, 1]) || ! is.numeric(x[, 2]) || ! all(x[, 1] > 0) || ! all(x[, 2] > 0)){
     stop("Check your input please!")
   }
