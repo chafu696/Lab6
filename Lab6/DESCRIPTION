@@ -3,15 +3,16 @@ Type: Package
 Title: knapsack algorithm
 Version: 0.1.0
 Date: 2020-10-11
-Author: Chao Fu & Micheal Bailey
+Author: Chao Fu & Michael Bailey
 Maintainer: Chao Fu<neu_fuchao@163.com>
 Description: This function use brute algorithm to solve the knapsack problem.
 License: GPL-3
 Depends: R(>= 3.0.0)
 Encoding: UTF-8
+Imports: parallel
 LazyData: true
 RoxygenNote: 7.1.1
-Suggests: 
+Suggests:
     testthat,
     knitr,
     rmarkdown

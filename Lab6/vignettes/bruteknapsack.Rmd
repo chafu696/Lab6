@@ -27,15 +27,15 @@ a algorithm.
 
 ## brute_force_knapsack()
 1. The function implements the algorithm with complexity O(2^n). 
-1. The return is an list with the biggest value and the items.
+1. The return is a list with the biggest value and the items.
 
 ## knapsack_dynamic()
 1. The function implements the dynamic programming algorithm. 
-1. The return is an list with the biggest value and the items.
+1. The return is a list with the biggest value and the items.
 
 ## greedy_knapsack()
 1. The function implements the greedy algorithm. 
-1. The return is an list with the biggest value and the items.
+1. The return is a list with the biggest value and the items.
 
 # Questions
 ** How much time does it takes to run the brute force algorithm for n = 16 objects? **
@@ -49,6 +49,10 @@ It takes 0.03 seconds to run the greedy algorithm for 1000000 objects. During pr
 
 ** What performance gain could you get by trying to improving your code? **
 From the initial implementation of the brute force algorithm, this version is 300% faster, so poorly implemented code can cause issues especially during computationally heavy things such as a brute force algorithm. Minimising the memory usage can be useful in theory as well, though not especially important for our applications. Well written code can speed up functions in the best case by a lot, by skipping calculations that may not be needed. 
+
+** What performance gain could you get by parallelizing brute force search? **
+In an ideal world you could speed up by a factor of as many cores as you have, though in practice it's nowhere near that due to overhead and 
+For sufficiently large data frames (ie the overhead is negligible), our implementation of the parallelisation takes about 60% of the time of the single core variant. The implementation feels ugly, in that it's returning a large list with (most) elements being a list with 2 elements. This large list then is then processed to get a list of just the first elements to find the max value (this processing was over ten times faster without parallelisation). Many other methods were tried, but with the bottleneck being any parLapply() on the large lists, nothing could come close to the same speed as the final implementation.
 
 # Usage
 

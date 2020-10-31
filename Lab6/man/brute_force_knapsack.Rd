@@ -4,12 +4,14 @@
 \alias{brute_force_knapsack}
 \title{Brute force method for solving the knapsack problem}
 \usage{
-brute_force_knapsack(x, W)
+brute_force_knapsack(x, W, parallel = FALSE)
 }
 \arguments{
 \item{x}{a data frame has two columns and all the elements are positive numbers}
 
 \item{W}{a single number denotes the size of the knapsack}
+
+\item{parallel}{default FALSE: set to TRUE if you wish to use parallel computing. this can speed up the function for larger data frames}
 }
 \value{
 a list contains the biggest value and the items
